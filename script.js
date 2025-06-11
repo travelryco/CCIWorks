@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.experience-card, .service-card');
+    const animatedElements = document.querySelectorAll('.experience-card, .service-card, .portfolio-item');
     animatedElements.forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);

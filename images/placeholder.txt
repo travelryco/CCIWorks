@@ -1,0 +1,24 @@
+CCIWORKS - Image Placeholders
+
+Please replace these placeholder filenames with the actual images:
+
+PORTFOLIO IMAGES:
+1. exhaust-work.jpg - Custom exhaust system fabrication image
+2. desert-truck.jpg - White pickup truck in sand dunes 
+3. suspension-work.jpg - Blue truck with orange suspension work
+4. land-cruiser.jpg - Toyota Land Cruiser in natural setting
+5. green-monster.jpg - Green modified off-road vehicle with large tires
+
+HERO BACKGROUND (optional):
+6. hero-bg.jpg - Optional hero section background image (can use desert-truck.jpg or another dramatic off-road scene)
+
+The images are already referenced in the HTML and will display once you replace the placeholders with the actual image files.
+
+Recommended image specifications:
+- Format: JPG or WebP
+- Dimensions: 800x600px or similar 4:3 aspect ratio
+- File size: Under 500KB each for optimal loading
+
+To add the images:
+1. Save your images to the /images/ folder with the exact filenames listed above
+2. Images will automatically appear on the website 
