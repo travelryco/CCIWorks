@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Form submission handling
     const contactForm = document.getElementById('contactForm');
+    const heroQuoteForm = document.getElementById('heroQuoteForm');
     
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -83,6 +84,54 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Log form data (for development - remove in production)
             console.log('Form submitted:', data);
+        }, 2000);
+    });
+
+    // Hero Quote Form submission handling
+    heroQuoteForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(heroQuoteForm);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            service: formData.get('service'),
+            message: formData.get('message')
+        };
+
+        // Simple validation
+        if (!data.name || !data.email || !data.service || !data.message) {
+            showNotification('Please fill in all required fields.', 'error');
+            return;
+        }
+
+        if (!isValidEmail(data.email)) {
+            showNotification('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        // Show loading state
+        const submitBtn = heroQuoteForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        // Simulate form submission (replace with actual backend integration)
+        setTimeout(() => {
+            // Reset form
+            heroQuoteForm.reset();
+            
+            // Reset button
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            
+            // Show success message
+            showNotification('Thank you for your quote request! We\'ll get back to you within 24 hours.', 'success');
+            
+            // Log form data (for development - remove in production)
+            console.log('Hero quote form submitted:', data);
         }, 2000);
     });
 
