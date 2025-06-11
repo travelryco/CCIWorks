@@ -31,39 +31,89 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-background-pattern"></div>
         <div class="hero-content">
-            <div class="hero-text">
-                <h1>Custom Off-Road Solutions</h1>
-                <p>Professional automotive modification and custom off-road parts manufacturing</p>
+            <div class="hero-main">
+                <div class="hero-badge">
+                    <span>15+ Years Experience</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="hero-title-main">CUSTOM OFF-ROAD</span>
+                    <span class="hero-title-accent">SOLUTIONS</span>
+                </h1>
+                <p class="hero-subtitle">Transform your vehicle into an unstoppable off-road beast with our professional modifications and custom parts manufacturing</p>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Satisfaction</div>
+                    </div>
+                </div>
+
                 <div class="hero-buttons">
-                    <a href="#services" class="btn btn-primary">Our Services</a>
-                    <a href="#experience" class="btn btn-secondary">Learn More</a>
+                    <a href="#portfolio" class="btn btn-primary">
+                        <i class="fas fa-images"></i>
+                        View Our Work
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        <i class="fas fa-cogs"></i>
+                        Our Services
+                    </a>
                 </div>
             </div>
-            <div class="hero-quote">
-                <h3>Get Your Quote</h3>
+            
+            <div class="hero-quote-card">
+                <div class="quote-card-header">
+                    <h3><i class="fas fa-calculator"></i> Get Free Quote</h3>
+                    <p>Ready to start your build?</p>
+                </div>
                 <form id="heroQuoteForm" class="quote-form">
-                    <div class="form-row">
+                    <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
                         <input type="email" name="email" placeholder="Your Email" required>
                     </div>
-                    <div class="form-row">
+                    <div class="form-group">
                         <input type="tel" name="phone" placeholder="Your Phone">
+                    </div>
+                    <div class="form-group">
                         <select name="service" required>
-                            <option value="">Select Service</option>
-                            <option value="custom-parts">Custom Parts</option>
+                            <option value="">What do you need?</option>
+                            <option value="custom-parts">Custom Parts Manufacturing</option>
                             <option value="vehicle-modifications">Vehicle Modifications</option>
                             <option value="maintenance">Maintenance & Support</option>
                             <option value="consultation">Consultation</option>
                         </select>
                     </div>
-                    <textarea name="message" placeholder="Tell us about your project..." rows="3" required></textarea>
-                    <button type="submit" class="btn btn-quote">Get Free Quote</button>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Tell us about your project..." rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-quote">
+                        <i class="fas fa-paper-plane"></i>
+                        Get Free Quote
+                    </button>
                 </form>
             </div>
         </div>
-        <div class="hero-image">
-            <i class="fas fa-truck-monster"></i>
+        
+        <div class="hero-visual">
+            <div class="hero-truck-icon">
+                <i class="fas fa-truck-monster"></i>
+            </div>
+            <div class="hero-decorative-elements">
+                <div class="floating-element element-1"><i class="fas fa-cog"></i></div>
+                <div class="floating-element element-2"><i class="fas fa-wrench"></i></div>
+                <div class="floating-element element-3"><i class="fas fa-tools"></i></div>
+            </div>
         </div>
     </section>
 
@@ -111,35 +161,55 @@
             <p class="portfolio-subtitle">See some of our custom off-road builds and modifications in action</p>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="images/exhaust-work.jpg" alt="Custom exhaust system fabrication" loading="lazy">
+                    <div class="portfolio-image-placeholder exhaust-bg">
+                        <div class="portfolio-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                    </div>
                     <div class="portfolio-overlay">
                         <h3>Custom Exhaust Systems</h3>
                         <p>Performance exhaust fabrication and installation</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="images/desert-truck.jpg" alt="Off-road truck in desert terrain" loading="lazy">
+                    <div class="portfolio-image-placeholder desert-bg">
+                        <div class="portfolio-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                    </div>
                     <div class="portfolio-overlay">
                         <h3>Desert Performance</h3>
                         <p>Modified trucks ready for extreme terrain</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="images/suspension-work.jpg" alt="Custom suspension modification" loading="lazy">
+                    <div class="portfolio-image-placeholder suspension-bg">
+                        <div class="portfolio-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
                     <div class="portfolio-overlay">
                         <h3>Suspension Upgrades</h3>
                         <p>Professional lift kits and suspension work</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="images/land-cruiser.jpg" alt="Toyota Land Cruiser off-road build" loading="lazy">
+                    <div class="portfolio-image-placeholder classic-bg">
+                        <div class="portfolio-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                    </div>
                     <div class="portfolio-overlay">
                         <h3>Classic Builds</h3>
                         <p>Restored and modified classic off-road vehicles</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="images/green-monster.jpg" alt="Custom green off-road vehicle with large tires" loading="lazy">
+                    <div class="portfolio-image-placeholder extreme-bg">
+                        <div class="portfolio-icon">
+                            <i class="fas fa-truck-monster"></i>
+                        </div>
+                    </div>
                     <div class="portfolio-overlay">
                         <h3>Extreme Modifications</h3>
                         <p>Full custom builds for serious off-roaders</p>
