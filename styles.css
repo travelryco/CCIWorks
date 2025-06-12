@@ -12,8 +12,9 @@ html {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--black);
     overflow-x: hidden;
+    background: var(--light-gray);
 }
 
 .container {
@@ -22,9 +23,18 @@ body {
     padding: 0 20px;
 }
 
+/* Color variables */
+:root {
+    --black: #111;
+    --dark-gray: #181818;
+    --white: #fff;
+    --dark-red: #a11d1d;
+    --light-gray: #f5f5f5;
+}
+
 /* Navigation */
 .navbar {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    background: var(--black);
     padding: 1rem 0;
     position: fixed;
     top: 0;
@@ -43,7 +53,7 @@ body {
 }
 
 .nav-logo h2 {
-    color: #ff6b35;
+    color: var(--dark-red);
     font-size: 1.8rem;
     font-weight: bold;
     letter-spacing: 2px;
@@ -55,7 +65,7 @@ body {
 }
 
 .nav-link {
-    color: #fff;
+    color: var(--white);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -69,12 +79,12 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: #ff6b35;
+    background: var(--dark-red);
     transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #ff6b35;
+    color: var(--dark-red);
 }
 
 .nav-link:hover::after {
@@ -97,8 +107,8 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-    color: white;
+    background: var(--black);
+    color: var(--white);
     padding: 120px 0 80px;
     min-height: 100vh;
     position: relative;
@@ -108,16 +118,7 @@ body {
 }
 
 .hero-background-pattern {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 165, 0, 0.1) 0%, transparent 50%),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    z-index: 1;
+    display: none;
 }
 
 .hero-content {
@@ -134,13 +135,14 @@ body {
 
 .hero-badge {
     display: inline-block;
-    background: linear-gradient(45deg, #ff6b35, #ffa500);
+    background: var(--dark-red);
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    box-shadow: none;
+    color: var(--white);
 }
 
 .hero-title {
@@ -153,15 +155,14 @@ body {
 
 .hero-title-main {
     display: block;
-    color: white;
+    color: var(--white);
 }
 
 .hero-title-accent {
     display: block;
-    background: linear-gradient(45deg, #ff6b35, #ffa500);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: none;
+    color: var(--dark-red);
+    -webkit-text-fill-color: var(--dark-red);
 }
 
 .hero-subtitle {
@@ -170,6 +171,7 @@ body {
     opacity: 0.8;
     line-height: 1.6;
     max-width: 500px;
+    color: #e0e0e0;
 }
 
 .hero-stats {
@@ -185,7 +187,7 @@ body {
 .stat-number {
     font-size: 2.5rem;
     font-weight: 900;
-    color: #ff6b35;
+    color: var(--dark-red);
     line-height: 1;
 }
 
@@ -209,14 +211,36 @@ body {
     gap: 0.5rem;
 }
 
+.hero-buttons .btn-primary {
+    background: var(--dark-red);
+    color: var(--white);
+    border: none;
+    box-shadow: none;
+}
+
+.hero-buttons .btn-primary:hover {
+    background: #7a1616;
+}
+
+.hero-buttons .btn-secondary {
+    background: transparent;
+    color: var(--dark-red);
+    border: 2px solid var(--dark-red);
+}
+
+.hero-buttons .btn-secondary:hover {
+    background: var(--dark-red);
+    color: var(--white);
+}
+
 /* Hero Quote Card */
 .hero-quote-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--white);
+    color: var(--black);
+    border: 1px solid #ddd;
     border-radius: 20px;
     padding: 2.5rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
 }
 
 .quote-card-header {
@@ -225,7 +249,7 @@ body {
 }
 
 .quote-card-header h3 {
-    color: #ff6b35;
+    color: var(--dark-red);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     display: flex;
@@ -277,8 +301,8 @@ body {
 }
 
 .btn-quote {
-    background: linear-gradient(45deg, #ff6b35, #ffa500);
-    color: white;
+    background: var(--dark-red);
+    color: var(--white);
     width: 100%;
     padding: 1.2rem;
     font-weight: 600;
@@ -294,8 +318,7 @@ body {
 }
 
 .btn-quote:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+    background: #7a1616;
 }
 
 /* Hero Visual */
@@ -369,26 +392,24 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, #ff6b35, #ffa500);
-    color: white;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    background: var(--dark-red);
+    color: var(--white);
+    box-shadow: none;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    background: #7a1616;
 }
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border: 2px solid #ff6b35;
+    color: var(--dark-red);
+    border: 2px solid var(--dark-red);
 }
 
 .btn-secondary:hover {
-    background: #ff6b35;
-    color: white;
-    transform: translateY(-2px);
+    background: var(--dark-red);
+    color: var(--white);
 }
 
 /* Experience Section */
@@ -444,7 +465,7 @@ body {
 /* Portfolio Section */
 .portfolio {
     padding: 80px 0;
-    background: white;
+    background: var(--light-gray);
 }
 
 .portfolio h2 {
@@ -494,6 +515,8 @@ body {
     position: relative;
     transition: all 0.3s ease;
     border-radius: 8px;
+    background: var(--dark-gray) !important;
+    color: var(--white);
 }
 
 .portfolio-item:hover .portfolio-placeholder {
@@ -502,7 +525,6 @@ body {
 
 .placeholder-content {
     text-align: center;
-    color: white;
     z-index: 2;
 }
 
@@ -511,6 +533,7 @@ body {
     margin-bottom: 1rem;
     display: block;
     opacity: 0.9;
+    color: var(--dark-red);
 }
 
 .placeholder-content span {
@@ -518,6 +541,7 @@ body {
     font-weight: bold;
     letter-spacing: 2px;
     opacity: 0.8;
+    color: var(--white);
 }
 
 .portfolio-placeholder::before {
@@ -552,7 +576,7 @@ body {
 .portfolio-overlay h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
-    color: #ff6b35;
+    color: var(--dark-red);
 }
 
 .portfolio-overlay p {
@@ -561,7 +585,7 @@ body {
 }
 
 .portfolio-cta {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    background: var(--dark-gray);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -569,7 +593,7 @@ body {
 }
 
 .portfolio-cta-content h3 {
-    color: #ff6b35;
+    color: var(--dark-red);
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -578,6 +602,15 @@ body {
     color: white;
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
+}
+
+.portfolio-cta-content .btn {
+    background: var(--dark-red);
+    color: var(--white);
+}
+
+.portfolio-cta-content .btn:hover {
+    background: #7a1616;
 }
 
 .portfolio-image {
@@ -740,8 +773,8 @@ body {
 
 /* Footer */
 .footer {
-    background: #1a1a1a;
-    color: white;
+    background: var(--black);
+    color: var(--white);
     padding: 40px 0 20px;
 }
 
@@ -754,7 +787,7 @@ body {
 
 .footer-section h3,
 .footer-section h4 {
-    color: #ff6b35;
+    color: var(--dark-red);
     margin-bottom: 1rem;
 }
 
@@ -771,7 +804,7 @@ body {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid #333;
-    color: #999;
+    color: #bbb;
 }
 
 /* Responsive Design */
