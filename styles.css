@@ -250,15 +250,15 @@ body {
     padding: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background: #fff;
+    color: #222;
     font-size: 0.95rem;
     transition: all 0.3s ease;
 }
 
 .quote-form input::placeholder,
 .quote-form textarea::placeholder {
-    color: #ccc;
+    color: #888;
 }
 
 .quote-form input:focus,
@@ -266,8 +266,9 @@ body {
 .quote-form textarea:focus {
     outline: none;
     border-color: #ff6b35;
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+    background: #fff;
+    color: #222;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.15);
 }
 
 .quote-form select option {
