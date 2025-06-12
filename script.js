@@ -373,4 +373,29 @@ function lazyLoadImages() {
 }
 
 // Initialize lazy loading
-document.addEventListener('DOMContentLoaded', lazyLoadImages); 
+document.addEventListener('DOMContentLoaded', lazyLoadImages);
+
+// Smart Image Loading for Portfolio
+document.addEventListener('DOMContentLoaded', function() {
+    const portfolioContainers = document.querySelectorAll('.portfolio-image-container[data-bg-image]');
+    
+    portfolioContainers.forEach(container => {
+        const imagePath = container.getAttribute('data-bg-image');
+        
+        // Create a new image to test if it exists
+        const img = new Image();
+        
+        img.onload = function() {
+            // Image exists, use it as background
+            container.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('${imagePath}')`;
+            container.classList.add('has-image');
+        };
+        
+        img.onerror = function() {
+            // Image doesn't exist, keep the gradient background
+            console.log(`Image not found: ${imagePath} - using gradient fallback`);
+        };
+        
+        img.src = imagePath;
+    });
+}); 

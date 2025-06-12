@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CCIWORKS Sample Images Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .image-preview { display: inline-block; margin: 10px; text-align: center; }
+        canvas { border: 2px solid #ddd; border-radius: 8px; }
+        button { margin: 5px; padding: 8px 16px; background: #ff6b35; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #e55a2b; }
+    </style>
+</head>
+<body>
+    <h1>CCIWORKS Sample Images</h1>
+    <p>These are sample images for your portfolio. Right-click and "Save As" to download, or click the download buttons.</p>
+    
+    <div id="images-container"></div>
+
+    <script>
+        const images = [
+            { name: 'exhaust-work.jpg', bg: '#2c3e50', text: 'EXHAUST\nSYSTEM', icon: '🔧' },
+            { name: 'desert-truck.jpg', bg: '#f39c12', text: 'DESERT\nTRUCK', icon: '🏔️' },
+            { name: 'suspension-work.jpg', bg: '#3498db', text: 'SUSPENSION\nUPGRADE', icon: '⚙️' },
+            { name: 'land-cruiser.jpg', bg: '#27ae60', text: 'CLASSIC\nBUILD', icon: '🚗' },
+            { name: 'green-monster.jpg', bg: '#8e44ad', text: 'EXTREME\nMODIFICATION', icon: '🚛' }
+        ];
+
+        const container = document.getElementById('images-container');
+
+        images.forEach(img => {
+            const canvas = document.createElement('canvas');
+            canvas.width = 800;
+            canvas.height = 600;
+            const ctx = canvas.getContext('2d');
+
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 800, 600);
+            gradient.addColorStop(0, img.bg);
+            gradient.addColorStop(1, img.bg + '80');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 800, 600);
+
+            // Add subtle pattern
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            for (let i = 0; i < 800; i += 40) {
+                for (let j = 0; j < 600; j += 40) {
+                    ctx.fillRect(i, j, 2, 2);
+                }
+            }
+
+            // Add icon
+            ctx.font = '120px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.fillText(img.icon, 400, 220);
+
+            // Add text
+            ctx.font = 'bold 48px Arial';
+            ctx.fillStyle = 'white';
+            ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
+            ctx.lineWidth = 2;
+            
+            const lines = img.text.split('\n');
+            lines.forEach((line, index) => {
+                const y = 400 + (index * 60);
+                ctx.strokeText(line, 400, y);
+                ctx.fillText(line, 400, y);
+            });
+
+            // Add CCIWORKS branding
+            ctx.font = 'bold 24px Arial';
+            ctx.fillStyle = '#ff6b35';
+            ctx.fillText('CCIWORKS', 400, 550);
+
+            const div = document.createElement('div');
+            div.className = 'image-preview';
+            div.innerHTML = `
+                <h3>${img.name}</h3>
+                ${canvas.outerHTML}
+                <br>
+                <button onclick="downloadCanvas(this.previousElementSibling, '${img.name}')">Download</button>
+            `;
+            container.appendChild(div);
+        });
+
+        function downloadCanvas(canvas, filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/jpeg', 0.9);
+            link.click();
+        }
+    </script>
+</body>
+</html> 
