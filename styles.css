@@ -484,51 +484,52 @@ body {
     box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
-.portfolio-image-container {
+.portfolio-placeholder {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    transition: transform 0.3s ease;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    transition: all 0.3s ease;
+    border-radius: 8px;
 }
 
-.portfolio-item:hover .portfolio-image-container {
+.portfolio-item:hover .portfolio-placeholder {
     transform: scale(1.05);
 }
 
-.portfolio-image-container.has-image .portfolio-icon {
-    opacity: 0;
-}
-
-.portfolio-icon {
-    font-size: 4rem;
-    color: rgba(255, 255, 255, 0.8);
+.placeholder-content {
+    text-align: center;
+    color: white;
     z-index: 2;
 }
 
-.exhaust-bg {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
+.placeholder-content i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+    opacity: 0.9;
 }
 
-.desert-bg {
-    background: linear-gradient(135deg, #f39c12, #e67e22);
+.placeholder-content span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    opacity: 0.8;
 }
 
-.suspension-bg {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-}
-
-.classic-bg {
-    background: linear-gradient(135deg, #27ae60, #229954);
-}
-
-.extreme-bg {
-    background: linear-gradient(135deg, #8e44ad, #9b59b6);
+.portfolio-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    border-radius: 8px;
 }
 
 .portfolio-overlay {
